@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class getArrayMean{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int idx = 0;
         System.out.print("Enter number of elements: ");
         int n = scanner.nextInt();
         int sum = 0;
@@ -19,5 +18,3 @@ public class getArrayMean{
         scanner.close();
 }
 }
-
-
