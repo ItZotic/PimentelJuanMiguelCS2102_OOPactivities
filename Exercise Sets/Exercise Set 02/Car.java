@@ -16,16 +16,21 @@ public class Car {
     public void setPrice(double price) { this.price = price;}
     public void setSize(char size) { this.size = Character.toUpperCase(size);}
 
-    public String getCarDetails() {
-        String sizeDescriptor = (size == 'S') ? "small" : (size == 'M') ? "medium" : "large";
+    public String toString() {
+        String sizeDescriptor;
+        switch (size) {
+            case 'S':
+                sizeDescriptor = "small";
+                break;
+            case 'M':
+                sizeDescriptor = "medium";
+                break;
+            case 'L':
+                sizeDescriptor = "large";
+                break;
+            default:
+                sizeDescriptor = "unknown"; 
+        }
         return String.format("Car (%s) - P%.2f - %s", color, price, sizeDescriptor);
-    }
-
-    public static void main(String[] args) {
-        Car car1 = new Car("blue", 50000.00, 'L');
-        Car car2 = new Car("red", 19999.85, 'm');
-
-        System.out.println(car1.getCarDetails());
-        System.out.println(car2.getCarDetails());
     }
 }
